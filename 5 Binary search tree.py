@@ -18,7 +18,7 @@ class Node:
                     self.right = Node(data)
                     return True
                 else:
-                    return self.left.insert(data)
+                    return self.right.insert(data)
 
     def inorder(self):
         if self:
@@ -70,3 +70,6 @@ t.insert(3)
 t.insert(1)
 t.insert(8)
 t.insert(9)
+t.insert(10)
+t.insert(2)
+t.inorder()
