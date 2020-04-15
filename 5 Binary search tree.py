@@ -42,6 +42,19 @@ class Node:
             if self.right:
                 self.right.postorder()
             print(str(self.value))
+    def min(self):
+        if self.left is not None:
+            self.left.min()
+        else:
+            print(str(self.value))
+            return True
+    def max(self):
+        if self.right is not None:
+            self.right.max()
+        else:
+            print(str(self.value))
+            return True
+
 
 class Tree:
     def __init__(self):
@@ -63,13 +76,19 @@ class Tree:
     def postorder(self):
         if self.root:
             self.root.postorder()
+    def min(self):
+        return self.root.min()
+    def max(self):
+        return self.root.max()
+
 t = Tree()
 t.insert(4)
-t.insert(7)
-t.insert(3)
+t.insert(5)
+t.insert(6)
 t.insert(1)
+t.insert(3)
+t.insert(7)
+t.insert(15)
 t.insert(8)
-t.insert(9)
-t.insert(10)
-t.insert(2)
-t.inorder()
+t.min()
+t.max()
